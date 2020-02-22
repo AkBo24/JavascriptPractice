@@ -20,3 +20,15 @@ const isMan = true;
 const x     = null;
 const y     = undefined;
 // y = 8; does not work bc y is constant
+let z;
+
+
+
+//typeof statement checks if x is a typeof y
+console.log(typeof name);
+
+//typeof null returns object wich is incorrect
+//due to the way javascript is written
+//typeof y & z is undefined
+
+
