@@ -3,8 +3,8 @@
 //var - dont use
 
 //let - allows reasinging 
-let z = 30;
-z = 31;
+let thing = 30;
+thing = 31;
 
 //const - constant variable in java
 //always use unless variable is gauranteed to be changed
@@ -30,5 +30,31 @@ console.log(typeof name);
 //typeof null returns object wich is incorrect
 //due to the way javascript is written
 //typeof y & z is undefined
+
+//Template String - works similarly to concatation
+//use ${*name of variable*}
+//ex: (prints My name is not James and I am older than 9)
+console.log(`My name is not ${name} and I am older than ${age}`);
+
+//String basics
+//.length (IS NOT A METHOD IN JAVASCRIPT)
+//.substring() works as intended
+//.spit('*argument*') spits a string into an array based on the deliminator
+const test = 'hi, example, word';
+console.log(test.split(', '))
+
+//Array basics (ARRAYS ARE NOT STATIC SIZE)
+//diff ways to initalize arrays
+const terstArray = new Array(1,2,3);
+const fruits = ['apples', 'bannanas', 'oranges'];
+//can have multiple types inside arrays
+const test3Array = [1, true, 'c', null];
+//access an element
+console.log(fruits[1]);
+//add to array
+fruits.push('strawberries');
+//add to front
+fruits.unshift('cherries');
+//array supports .pop();
 
 
