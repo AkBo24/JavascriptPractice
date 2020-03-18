@@ -57,4 +57,35 @@ fruits.push('strawberries');
 fruits.unshift('cherries');
 //array supports .pop();
 
+//Object Literals - work like Key Value Pairs
+const person = {
+    firstname: 'Akshay',
+    lastname: 'doe',
+    hobbies: ['music','sports'],
+    address: {
+        street:'Johnson',
+        state: 'some state'
+    }
+}
+//use "." to access a key
+console.log(person.hobbies[0]);
+//to use keys as a global variable:
+const {firstname, lastname} = person;
+console.log(`${lastname}, ${firstname}`);
 
+//adding a key value:
+person.email = "akshaybodla21@gmail.com";
+console.log(person.email);
+
+//ObjectLiterals are possible w/in array
+const testObjectLiterals [
+    {
+        id: 1,
+        text: 'hi'
+    },
+
+    {
+        
+    }
+
+];
