@@ -24,3 +24,24 @@ console.log(email.substr(5,3));
 
 //.replace() - replace the first instance of this chara with other
 console.log(email.replace('@','#'));
+
+//Template Literals - different ways to concatenate strings
+let name = "Akshay";
+let str  = `${name}'s email is ${email}`;
+console.log(str);
+
+//Array Methods
+let people = ["obama","me", "you"];
+
+//.join() creates a string literal with the passed in argument as seperator
+console.log(people.join(", "));
+//.indexOf() - self explanatory
+console.log(people.indexOf("obama"));
+//.concat() - explanatory
+//.push() - adds a new value
+people.push("romney");
+
+//.pop() - removes item @ end of array
+people.pop()
+console.log(people.join(", "));
+
