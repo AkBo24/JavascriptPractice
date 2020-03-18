@@ -52,3 +52,14 @@ console.log(25 == '25'); //returns true
 console.log(25 === 25); //true
 console.log(25 === '25'); //false: second thing is a string
 console.log(25 !== '25'); //true
+
+//Type Conversion
+
+//check type of something:
+console.log(typeof 1); //1 is a number
+
+//String -> number (int, double etc)
+let score = '100';
+console.log(Number(100)+1); //returns 101
+
+//Number -> string use Number('string literal')
