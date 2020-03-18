@@ -45,3 +45,10 @@ people.push("romney");
 people.pop()
 console.log(people.join(", "));
 
+//loose comparision (diff types can still be equal)
+console.log(25 == '25'); //returns true
+
+//strict comparision (dff types can not be equal)
+console.log(25 === 25); //true
+console.log(25 === '25'); //false: second thing is a string
+console.log(25 !== '25'); //true
