@@ -63,3 +63,18 @@ let score = '100';
 console.log(Number(100)+1); //returns 101
 
 //Number -> string use Number('string literal')
+
+//For Loop - syntax is the same
+// for(let i = 0; i < 3; i++) {
+//     console.log(i+1);
+// }
+
+//While loop - syntax is the same
+// let i = 0;
+// while(i < 3) {
+//     console.log(i);
+//     i++
+// }
+
+//Do While loop has same syntax
+//if statements - exactly the same wow
