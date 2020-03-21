@@ -1,8 +1,15 @@
 //Object literals in JS
+
 let user = {
     name  : 'John Doe',
     email : "johndoe@domain.com",
-    games : ["Hallow Knight", "Dragon Quest V"],
+
+    //Objects in arrays
+    games : [
+        {title: "Hallow Knight", genre: "Metroidvania"},
+        {title: "Dragon Ques V", genre: "Japanese RPG"}
+    ],
+
     logged: false,
     
     //creating method:
@@ -23,7 +30,7 @@ let user = {
     getGames () {
         console.log(`${this.name} owns these games:`);
         this.games.forEach(games => {
-            console.log(games);
+            console.log(games.title, games.genre);
         })
     }
 };
