@@ -5,8 +5,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Chapter 6: Document Object Model (DOM)</h1>
-    <script src = "chapter6.js"></script>
+    <h1 id = "title">Chapter 6: Document Object Model (DOM)</h1>
+    
 
     <h2>What is the DOM</h2>
     <ul>
@@ -31,7 +31,21 @@
             <li>Provides an API for JavaScript to use and create interactable websites (ex: the mouseenter function)</li>
         </ul>
 
+    <h2>Quering the DOM:</h2>
+    <p>A paragraph to query the DOM (using JavaScript), use document's .querySelector() method</p>
+    <p class="query">Query for this paragraph using a class</p>
 
     </ul>
+
+    <div class = "query">
+        <p>This paragraph is inside a div to be queryed</p>
+        <p>
+            Since the div has a class, we use the div.classname (in this case query)
+            to specify that we want to access the div and not the other element with this
+            class name
+        </p>
+    </div>
+
+    <script src = "chapter6.js"></script>
 </body>
 </html>
