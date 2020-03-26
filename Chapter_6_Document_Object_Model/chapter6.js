@@ -78,3 +78,16 @@ console.log(changeSuccess.classList); //prints error to console
 changeSuccess.classList.remove('error')
 changeSuccess.classList.add('success');
 
+//Accessing parents and children of a document element
+//(the dom is structured as a tree ADT with HTML as root node) and
+//each document element has a child and a parent element property
+const art = document.querySelector('article');
+console.log(art);
+
+//for each is not a viable method on art currently, so change it to an array
+Array.from(art.children).forEach((children) => {
+    children.classList.add('article');
+});
+
+//Use .parentElement property of a child to get its parent:
+console.log(art.parentElement); //Logs Body as the article's parent is the body
