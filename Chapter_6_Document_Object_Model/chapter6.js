@@ -70,3 +70,11 @@ console.log(link.getAttribute('href'));
 //The document object has a inner CSS property called styles which holds all of the CSS properties
 console.log(link.style.color) //the color right now is empty which shows up as an empty log in the console
 link.style.color = 'orange';  //if link is logged again, the color will show as orangne in the console
+
+//Adding & Removing Classes
+//The document has a classList object which has a .add() and .remove() methods
+const changeSuccess = document.querySelector(".error");
+console.log(changeSuccess.classList); //prints error to console
+changeSuccess.classList.remove('error')
+changeSuccess.classList.add('success');
+
