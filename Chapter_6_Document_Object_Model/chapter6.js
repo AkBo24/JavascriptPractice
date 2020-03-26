@@ -65,3 +65,8 @@ console.log(link.getAttribute('href'));
 //arg 1 - attribute to change, arg 2 - what to change attribute to
 link.setAttribute('href', 'https://www.amazon.com');
 console.log(link.getAttribute('href'));
+
+//Changing CSS Styles
+//The document object has a inner CSS property called styles which holds all of the CSS properties
+console.log(link.style.color) //the color right now is empty which shows up as an empty log in the console
+link.style.color = 'orange';  //if link is logged again, the color will show as orangne in the console
