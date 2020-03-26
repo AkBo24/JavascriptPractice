@@ -54,3 +54,14 @@ console.log(parasAll);
 
 const makeH2 = document.querySelector("#update");
 makeH2.innerHTML = '<h2>Quering the DOM: (this html was updated in JS!)</h2>'
+
+//Getting and Setting HTML attributes (hrefs, classes, ids)
+
+//Use .getAttribute to get a reference to the element to change
+const link = document.querySelector('a');
+console.log(link.getAttribute('href'));
+
+//Use .setAttribute() to change the attribute:
+//arg 1 - attribute to change, arg 2 - what to change attribute to
+link.setAttribute('href', 'https://www.amazon.com');
+console.log(link.getAttribute('href'));
