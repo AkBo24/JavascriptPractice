@@ -91,3 +91,14 @@ Array.from(art.children).forEach((children) => {
 
 //Use .parentElement property of a child to get its parent:
 console.log(art.parentElement); //Logs Body as the article's parent is the body
+
+//Event Listener: Click
+const items = document.querySelectorAll(".strike")
+items.forEach(item => {
+    item.addEventListener('click', e => {
+        if(e.target.style.textDecoration != 'line-through')
+             e.target.style.textDecoration = 'line-through';
+        else
+            e.target.style.textDecoration = '';
+    });
+});
