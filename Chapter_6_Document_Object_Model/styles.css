@@ -13,3 +13,43 @@
 .article {
     color: darkcyan
 }
+
+.createPop{
+    display: block;
+    margin: 25px auto;
+    background: firebrick;
+    color: white;
+    border: 0;
+    padding: 6px 10px;
+}
+
+.popWrapper{
+    color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.pop{
+    font-family: Georgia;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    background: whitesmoke;
+    position: relative;
+    display: none;
+}
+
+.closePop{
+    text-align: right;
+    top: 5px;
+    bottom: 8px;
+    color: tomato;
+    position: relative;
+    display: none;
+}

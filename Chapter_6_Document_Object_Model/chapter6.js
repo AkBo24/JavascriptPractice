@@ -138,3 +138,20 @@ append2.addEventListener('click', e => {
     li.textContent = 'Creating a new todo that you can delete';
     bubbling.append(li);    
 });
+
+const createPop = document.querySelector(".createPop");
+const popWrapper= document.querySelector(".popWrapper");
+const pop       = document.querySelector(".pop");
+const close     = document.querySelector(".closePop");
+
+createPop.addEventListener('click', () => {
+    popWrapper.style.display = 'block';
+    pop.style.display        = 'block';
+    close.style.display      = 'block';
+});
+
+close.addEventListener('click', () =>{
+    popWrapper.style.display = 'none';
+    pop.style.display        = 'none';
+    close.style.display      = 'none';
+});
