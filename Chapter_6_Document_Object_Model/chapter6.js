@@ -96,9 +96,30 @@ console.log(art.parentElement); //Logs Body as the article's parent is the body
 const items = document.querySelectorAll(".strike")
 items.forEach(item => {
     item.addEventListener('click', e => {
-        if(e.target.style.textDecoration != 'line-through')
-             e.target.style.textDecoration = 'line-through';
-        else
-            e.target.style.textDecoration = '';
+        //If you want to simply edit the text you can do this:
+        // if(e.target.style.textDecoration != 'line-through')
+        //      e.target.style.textDecoration = 'line-through';
+        // else
+        //     e.target.style.textDecoration = '';
+
+        //to delete an element a DOM object offers a .remove() method that removes
+        //this object
+        e.target.remove();
     });
+});
+
+const todo    = document.querySelector(".eventListener")
+const prepend = document.querySelector(".prepend");
+const append  = document.querySelector(".append");
+
+prepend.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.textContent = 'Creating a new to-do at the beginning'
+    todo.prepend(li);
+});
+
+append.addEventListener('click', () => {
+    const li = document.createElement('li');
+    li.textContent = 'Creating a new to-do at the end'
+    todo.append(li);
 });
