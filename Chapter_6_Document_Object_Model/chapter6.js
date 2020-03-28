@@ -123,3 +123,18 @@ append.addEventListener('click', () => {
     li.textContent = 'Creating a new to-do at the end'
     todo.append(li);
 });
+
+
+//Event Bubbling and delegation
+//Add the required behavior to the ul that surrounds the list
+const bubbling = document.querySelector('.bubbling');
+bubbling.addEventListener('click', e => {
+    e.target.remove();
+});
+
+const append2 = document.querySelector(".append2");
+append2.addEventListener('click', e => {
+    const li = document.createElement('li');
+    li.textContent = 'Creating a new todo that you can delete';
+    bubbling.append(li);    
+});
