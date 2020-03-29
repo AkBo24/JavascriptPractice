@@ -14,3 +14,15 @@ input{
     margin: 10px auto;
     padding: 4px;
 }
+
+.feedback{
+    color: white
+}
+
+.valid {
+    background-color: lime;
+}
+
+.invalid {
+    background-color: firebrick;
+}
