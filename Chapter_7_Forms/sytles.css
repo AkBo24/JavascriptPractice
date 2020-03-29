@@ -1,0 +1,28 @@
+body {
+    background: rgb(255, 255, 255);
+}
+
+form{
+    max-width: 200px;
+    margin: 40px auto;
+    background: darkcyan;
+    padding: 10px;
+}
+
+input{
+    display: block;
+    margin: 10px auto;
+    padding: 4px;
+}
+
+.feedback{
+    color: white
+}
+
+.valid {
+    background-color: lime;
+}
+
+.invalid {
+    background-color: firebrick;
+}
