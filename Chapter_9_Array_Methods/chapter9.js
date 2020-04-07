@@ -43,3 +43,28 @@ const sale = items.map(item =>{
 });
 
 console.log(sale);
+
+/**
+ * Array Method: Reduce
+ * 
+ * A nondestructive method that iterates through the given array
+ * and produces a single value (such as a total, or a count)
+ * 
+ * Reduce takes two methods: the first is a call back function, 
+ *                           the second is a value given to the callback 
+ */
+
+ const farmers = [
+     {name: "Colt", numOranges: 30},
+     {name: "Wyatt", numOranges: 3000020},
+     {name: "Hudson", numOranges: Math.PI},
+     {name: "Grant", numOranges: 21323}
+ ]
+
+ const totalOranges = farmers.reduce((count, person) => {
+    return count + person.numOranges;
+ }, 0); //the zero initializes count: count = 0
+
+ console.log(totalOranges + " oranges");
+
+ 
