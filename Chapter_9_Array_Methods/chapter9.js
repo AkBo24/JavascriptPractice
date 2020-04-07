@@ -67,4 +67,16 @@ console.log(sale);
 
  console.log(totalOranges + " oranges");
 
- 
+ /**
+  * Array Method: Find
+  * 
+  * This method returns the first instance within an array that 
+  * passes a certain condition
+  * 
+  * For instance, the first 100% in an array of scores
+  */
+
+  const scores = [88,33,13,44, 99, 92, 331,4];
+
+  const firstAbove90 = scores.find( score => score>90 );
+  console.log(firstAbove90);
