@@ -80,3 +80,31 @@ console.log(sale);
 
   const firstAbove90 = scores.find( score => score>90 );
   console.log(firstAbove90);
+
+  /**
+   * Array Method: Sort
+   * 
+   * The find method is overloaded, one without any parameters, one that 
+   * takes a call back function
+   * 
+   * The no-param version has some wird sorting things for numbers
+   *    - check the video
+   * 
+   * The callback version works fine
+   *    it takes two parameters a and b which represent the current
+   *    element and the next element
+   * 
+   *    it returns a positive or negative number
+   *        if negative it switches b with a
+   *        if positive or zero no switches
+   * 
+   */
+
+   const orangeOrder = farmers.sort((a,b) => a.numOranges - b.numOranges);
+   console.log(orangeOrder) //orangeOrdered from least to greatest
+                            //b.numOranges - a.numOranges for greatest to least
+
+    /**
+     * Array Method: reverse
+     * Reverses an array
+     */
