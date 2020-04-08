@@ -15,3 +15,12 @@
  console.log(time.getMinutes());
  console.log(time.getSeconds());
  console.log(time.getTime());
+
+ /**
+  * The time object has two param constructors
+  * 1 where you can pass a string in a date format
+  * 2 where you can pass in a timestamp
+  */
+
+  const param1 = new Date ("March 3rd 1999 2:22:22");
+  const param2 = new Date(param1.getTime());
