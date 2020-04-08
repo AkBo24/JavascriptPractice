@@ -1,0 +1,28 @@
+{
+	"folders": [
+		{
+			"path": "Chapter_1_Javascript_Basics"
+		},
+		{
+			"path": "Chpater_2_Functions_Methods"
+		},
+		{
+			"path": "Chapter_5_Object_Literals"
+		},
+		{
+			"path": "Chapter_6_Document_Object_Model"
+		},
+		{
+			"path": "Chapter_7_Forms"
+		},
+		{
+			"path": "Chapter_9_Array_Methods"
+		},
+		{
+			"path": "Chapter_11_Time_Stamps"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Chapter_11_Time_Stamps"
+	}
+}
