@@ -24,3 +24,24 @@
 
   const param1 = new Date ("March 3rd 1999 2:22:22");
   const param2 = new Date(param1.getTime());
+
+  /**
+   * Build a time clock
+   * 
+   * we have a setInterval() method that runs every given interval
+   */
+    const clock = document.querySelector(".clock");
+    console.log(clock);
+   
+    const timer = () => {
+        const now = new Date();
+        const h   = now.getHours();
+        
+        clock.innerHTML = `
+            <span>${now.getHours()}</span> :
+            <span>${now.getMinutes()}</span> :
+            <span>${now.getSeconds()}</span>
+        `;
+    }
+
+   setInterval(timer ,1000);
