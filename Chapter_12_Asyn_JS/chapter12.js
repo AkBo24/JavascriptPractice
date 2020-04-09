@@ -16,7 +16,7 @@
  console.log(new Date());
  setTimeout(() => {
     console.log(new Date());
- }, 2000)
+ }, 1000)
 
  console.log(3);
  console.log(4);
@@ -34,28 +34,35 @@
    * API used below: jsonplaceholder.typicode.com
    */
 
-    /**
-     * Requesting/Getting data from an API
-     * 
-     * In JS the XMLHttpRequest object can handle many types of dat
-     *  (XML, JSON, Plaintext etc)
-     * 
-     * The object has 4 "states" that indicate what its doing
-     *  0: client created but open() has not been called
-     *  1: open() has been called
-     *  2: sent() has been called adn status is available
-     *  3: responseText field has partial data sent by the API
-     *  4: operation is complete
-     * 
-     * To request data from an api the open() method allows the object 
-     *  to inform what operation with 2 parameter
-     *      1: the operation type (get, update etc)
-     *      2: the api endpoint url
-     * 
-     * The sent() method sends the operation defined in open() to the api
-     * 
-     * To do event handeling, like printing the api data add an 
-     *  event listener to the request object
-     */
-
-     
+   /**
+    * Requesting/Getting data from an API
+    * 
+    * In JS the XMLHttpRequest object can handle many types of dat
+    *  (XML, JSON, Plaintext etc)
+    * 
+    * The object has 4 "states" that indicate what its doing
+    *  0: client created but open() has not been called
+    *  1: open() has been called
+    *  2: sent() has been called adn status is available
+    *  3: responseText field has partial data sent by the API
+    *  4: operation is complete
+    * 
+    * To request data from an api the open() method allows the object 
+    *  to inform what operation with 2 parameter
+    *      1: the operation type (get, update etc)
+    *      2: the api endpoint url
+    * 
+    * The sent() method sends the operation defined in open() to the api
+    * 
+    * To do event handeling, like printing the api data add an 
+    *  event listener to the request object
+    */
+    const request = new XMLHttpRequest();
+   
+    request.addEventListener('readystatechange', () => {
+       if(request.readyState == 4) console.log(request);
+    });
+   
+    //create a get request and send it to the api
+    request.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+    request.send();
