@@ -57,12 +57,31 @@
     * To do event handeling, like printing the api data add an 
     *  event listener to the request object
     */
-    const request = new XMLHttpRequest();
+   const request = new XMLHttpRequest();
    
-    request.addEventListener('readystatechange', () => {
-       if(request.readyState == 4) console.log(request);
-    });
+   request.addEventListener('readystatechange', () => {
+      if(request.readyState === 4) console.log(request.responseText);
+       console.log("Request status: ", request.status);
+   });
    
-    //create a get request and send it to the api
-    request.open('GET', 'https://jsonplaceholder.typicode.com/todos');
-    request.send();
+   //create a get request and send it to the api
+   request.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+   request.send();
+
+   /**
+    * XMLHttpRequest objects also have a status field that reports the 
+    *   "status" of the object (error 404 for instance)
+    * If the connection is successful, the status is in the 200's range
+   */
+
+   const poorRequest = new XMLHttpRequest();
+
+   request.addEventListener('readystatechange', () => {
+      if(poorRequest.readyState === 4 && poorRequest.status === 200) 
+         console.log(poorRequest.responseText);
+      else if(poorRequest.status === 404 && poorRequest.readyState === 4)
+       console.log("Could not fetch data");
+   });
+
+   poorRequest.open('GET', 'https://jsonplaceholder.typicode.com/todo');
+   poorRequest.send();
