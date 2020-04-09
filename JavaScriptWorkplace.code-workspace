@@ -20,9 +20,12 @@
 		},
 		{
 			"path": "Chapter_11_Time_Stamps"
+		},
+		{
+			"path": "Chapter_12_Asyn_JS"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Chapter_11_Time_Stamps"
+		"liveServer.settings.multiRootWorkspaceName": "Chapter_12_Asyn_JS"
 	}
 }
