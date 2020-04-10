@@ -58,30 +58,51 @@
     *  event listener to the request object
     */
    const request = new XMLHttpRequest();
-   
-   request.addEventListener('readystatechange', () => {
-      if(request.readyState === 4) console.log(request.responseText);
-       console.log("Request status: ", request.status);
-   });
-   
-   //create a get request and send it to the api
-   request.open('GET', 'https://jsonplaceholder.typicode.com/todos');
+   request.open('GET','https://jsonplaceholder.typicode.com/todos');
    request.send();
 
-   /**
-    * XMLHttpRequest objects also have a status field that reports the 
-    *   "status" of the object (error 404 for instance)
-    * If the connection is successful, the status is in the 200's range
-   */
+   //Static method to get the data from a request object
+   const getData = (data, callBack) => {
+      data.addEventListener('readystatechange', () => {
+         if(data.readyState === 4 && data.status === 200)
+            callBack(undefined, data.responseText);
+         else if(data.readyState === 4 && data.status === 404)
+            callBack(404, undefined);
+      });
+      
+   };
+
+   getData(request, (err, data) => {
+      if(err === undefined)
+         console.log(data);
+      else
+         console.log(`Error thrown: ${err}`);
+   });
+
+   // /**
+   //  * XMLHttpRequest objects also have a status field that reports the 
+   //  *   "status" of the object (error 404 for instance)
+   //  * If the connection is successful, the status is in the 200's range
+   // */
 
    const poorRequest = new XMLHttpRequest();
 
-   request.addEventListener('readystatechange', () => {
-      if(poorRequest.readyState === 4 && poorRequest.status === 200) 
-         console.log(poorRequest.responseText);
-      else if(poorRequest.status === 404 && poorRequest.readyState === 4)
-       console.log("Could not fetch data");
+   getData(poorRequest, (err, data) => {
+      if(err === undefined)
+         console.log(data);
+      else
+         console.log(`Error thrown: ${err}`);
    });
 
    poorRequest.open('GET', 'https://jsonplaceholder.typicode.com/todo');
    poorRequest.send();
+
+
+
+   // request.addEventListener('readystatechange', () => {
+   //    if(poorRequest.readyState === 4 && poorRequest.status === 200) 
+   //       console.log(poorRequest.responseText);
+   //    else if(poorRequest.status === 404 && poorRequest.readyState === 4)
+   //     console.log("Could not fetch data");
+   // });
+
