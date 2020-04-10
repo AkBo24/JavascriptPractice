@@ -96,13 +96,3 @@
 
    poorRequest.open('GET', 'https://jsonplaceholder.typicode.com/todo');
    poorRequest.send();
-
-
-
-   // request.addEventListener('readystatechange', () => {
-   //    if(poorRequest.readyState === 4 && poorRequest.status === 200) 
-   //       console.log(poorRequest.responseText);
-   //    else if(poorRequest.status === 404 && poorRequest.readyState === 4)
-   //     console.log("Could not fetch data");
-   // });
-
