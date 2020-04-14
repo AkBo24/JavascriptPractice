@@ -68,8 +68,7 @@
             callBack(undefined, data.responseText);
          else if(data.readyState === 4 && data.status === 404)
             callBack(404, undefined);
-      });
-      
+      });      
    };
 
    getData(request, (err, data) => {
@@ -135,3 +134,38 @@
     * For each of the todo calls we only need one .catch() method
     */
 
+   const promisesChain = (data) => {
+
+      return new Promise( (resolve, reject) => {
+         data.addEventListener('readystatechange', () => {
+            if(data.readyState === 4 && data.status === 200)
+               resolve(undefined, data.responseText);
+            else if(data.readyState === 4 && data.status === 404)
+               reject(404, undefined);
+         });
+      });
+   };
+
+   const cheesecake = new XMLHttpRequest();
+   const guitar     = new XMLHttpRequest();
+   const picture    = new XMLHttpRequest();
+
+   cheesecake.open('GET', 'cheesecake.json');
+   guitar.open('GET', 'guitar.json');
+   picture.open('GET', 'picture.json');
+
+   cheesecake.send();
+   guitar.send();
+   picture.send();
+
+   promisesChain(cheesecake).then( () => {
+      console.log("Cheesecake Promise resolved");
+      return promisesChain(guitar);
+   }).then(() => {
+      console.log("Guitar promise resolved");
+      return promisesChain(picture);
+   }).then(() => {
+      console.log("Picture promise resolved");
+   }).catch( () => {
+      console.log("error");
+   });
