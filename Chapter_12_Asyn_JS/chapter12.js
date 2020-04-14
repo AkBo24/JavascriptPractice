@@ -74,7 +74,7 @@
 
    getData(request, (err, data) => {
       if(err === undefined)
-         console.log(data);
+         console.log(); //data
       else
          console.log(`Error thrown: ${err}`);
    });
@@ -122,3 +122,16 @@
    }).catch(data => {
       console.log(data);
    });
+
+   /**
+    * Chaining promises
+    * 
+    * The method returning the promise can return itself (sort of like
+    * recursion).
+    * 
+    * Attached to that would be another .then() method call that would
+    * take care of the second todocall
+    * 
+    * For each of the todo calls we only need one .catch() method
+    */
+
