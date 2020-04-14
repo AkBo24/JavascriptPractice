@@ -79,11 +79,11 @@
          console.log(`Error thrown: ${err}`);
    });
 
-   // /**
-   //  * XMLHttpRequest objects also have a status field that reports the 
-   //  *   "status" of the object (error 404 for instance)
-   //  * If the connection is successful, the status is in the 200's range
-   // */
+   /**
+    * XMLHttpRequest objects also have a status field that reports the 
+    *   "status" of the object (error 404 for instance)
+    * If the connection is successful, the status is in the 200's range
+   */
 
    const poorRequest = new XMLHttpRequest();
 
@@ -96,3 +96,29 @@
 
    poorRequest.open('GET', 'https://jsonplaceholder.typicode.com/todo');
    poorRequest.send();
+
+
+   /**
+    * Promises: Promises are a sort of try-catch statement when getting data
+    * from an api
+    * 
+    * Prmomise is a native JS class that takes a call back method with two parameters:
+    *    1.a resolve method
+    *    2.a reject  method
+    * 
+    * The variable that calls the promise then utilizes a then method if the data
+    * is resolved and a catch method if the data is rejected (there was some error getting the data)
+    */
+
+   const promisesExample = () => {
+      return new Promise((resolve, reject) => {
+         resolve("Data has succeeded");
+         // reject("Data has failed");
+      });
+   };
+
+   promisesExample().then(data => {
+      console.log(data);
+   }).catch(data => {
+      console.log(data);
+   });
