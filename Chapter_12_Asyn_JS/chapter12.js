@@ -169,3 +169,18 @@
    }).catch( () => {
       console.log("error");
    });
+
+   /**
+    * Fetch api: The fetch api combines XMLHTTPRequests and promises
+    * into a single method call of fetch()
+    * 
+    * It provides a .json() method that returns a promise & therefore allows
+    * promise chaining
+    */
+
+    fetch('cheesecake.json').then((resolve) => {
+      console.log("Cheesecake Fetch Promise resolved");
+      return new resolve.json()
+    }).catch(() => {
+       console.log("request failed")
+    })
