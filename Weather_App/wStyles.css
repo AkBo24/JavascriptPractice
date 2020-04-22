@@ -1,0 +1,25 @@
+body {
+    
+    background: #fdf5e6;
+    letter-spacing: 0.15em;
+    font-size: 1.3em;
+    font-family: Georgia;
+    color: #ff9792;
+}
+
+* {
+    color: #ff9792;
+}
+
+.icon {
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+}
+
+h1 {
+    color: #0C85D1
+}
+
