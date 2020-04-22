@@ -11,3 +11,15 @@ body {
     color: #ff9792;
 }
 
+.icon {
+    position: relative;
+    top: -50px;
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: -50px;
+}
+
+h1 {
+    color: #0C85D1
+}
+

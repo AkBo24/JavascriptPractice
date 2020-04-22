@@ -26,6 +26,9 @@
 		},
 		{
 			"path": "Weather_App"
+		},
+		{
+			"path": "Weather_App\\img"
 		}
 	],
 	"settings": {
