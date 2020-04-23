@@ -8,9 +8,9 @@
  * The API provides 
  *  1. .setItem(key, value): store the data using a key value pair
  *  2. .getItem(key): return the value stored by this key
- *  3. update an item using .setItem(arg1, arg2)
- *  4. .remove(key): remove the value represented by this key
- *  5. .clear(): clear the entire local storage
+ *  3. .remove(key) : remove the value represented by this key
+ *  4. .clear()     : clear the entire local storage
+ *  5. update an item using .setItem(arg1, arg2)
  * 
  * 
  * Note: Everything passed into local storage is returned as a string, so parsing necessary
