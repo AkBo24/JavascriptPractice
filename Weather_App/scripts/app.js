@@ -10,14 +10,14 @@ input.addEventListener('submit', e => {
 
     //get the user input and clear the form input bar
     const city = input.city.value.trim();
-    console.log(city);
     input.reset();
 
     //update the city information
     updateData(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
-
+    console.log("dd")
+    localStorage.setItem("city", city);
 });
 
 const updateData = async (city) => {
@@ -41,19 +41,26 @@ const updateUI = (data) => {
             <span>${getWeather.Temperature.Metric.Value}</span>
             <span>&deg;C</span>
         </div>    
-    `
+    `;
         //update icon & image
 
-        let timeImg = "img/";
-        if(getWeather.IsDayTime)
-           timeImg = timeImg + 'day.svg';
-        else
-           timeImg = timeImg + 'night.svg';
+    let timeImg = "img/";
+    if(getWeather.IsDayTime)
+        timeImg = timeImg + 'day.svg';
+    else
+        timeImg = timeImg + 'night.svg';
     
-        time.setAttribute('src', timeImg)
-    
-        icon.setAttribute('src', `img/icons/${getWeather.WeatherIcon}.svg`);
+    time.setAttribute('src', timeImg)
+    icon.setAttribute('src', `img/icons/${getWeather.WeatherIcon}.svg`);
 
     if(card.classList.contains("d-none"))
         card.classList.remove("d-none");
+}
+
+//If local data exists (ie: the user has previously searched a city) then
+//automatically show it
+if(localStorage.getItem("city") != null){
+    updateData(localStorage.getItem("city"))
+        .then(data => updateUI(data))
+        .catch(err => console.log(err))
 }

@@ -25,12 +25,3 @@ const getCityData = async (city) => {
   return data[0];
 
 };
-
-// getCityData('san francisco')
-//   .then(data => {
-//       console.log(data);
-//       return getCityWeather(data.Key);
-//     })
-//   .then(
-//       data => console.log(data)
-//   );
