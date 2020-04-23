@@ -29,9 +29,12 @@
 		},
 		{
 			"path": "Chapter_14_Local_Storage"
+		},
+		{
+			"path": "Chapter_15_OOP"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Weather_App"
+		"liveServer.settings.multiRootWorkspaceName": "Chapter_15_OOP"
 	}
 }
