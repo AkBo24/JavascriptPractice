@@ -27,5 +27,5 @@ class User {
 }
 
 const user1 = new User();
-console.log(user1)
-console.log(user1.login("123"))
+console.log(user1);
+console.log(user1.login("123"));
