@@ -12,7 +12,20 @@
  * constructor function (just as you would in java) and then add
  * methods to the prototype for that 
  * 
+ *  function Classname(*add fields*) {
+ *      //set fields
+ *  }
+ * 
  * To manually add to a user defined prototype, 
  *  Classname.prototype.methodname = function() {
  *  }
+ */
+
+/**
+ * Prototypal Inheritance
+ * 
+ * to inherit from prototype:
+ * 
+ * Parentclass.call(this, *fields*)
+ * 
  */
