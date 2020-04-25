@@ -23,12 +23,33 @@ const input = document.querySelector("form")
 
 // console.log(database.collection('alchemy'))
 
-database.collection("alchemy").get()
-    .then(snapshot => {
-        snapshot.docs.forEach(doc => addrecipe(doc.data(), doc.id))
-        //addrecipe(doc.data())
-    })
-    .catch( err => console.log(err));
+// database.collection("alchemy").get()
+//     .then(snapshot => {
+//         snapshot.docs.forEach(doc => addrecipe(doc.data(), doc.id))
+//         //addrecipe(doc.data())
+//     })
+//     .catch( err => console.log(err));
+
+
+/**
+ * The above code only calls the database once
+ * When a user interacts with the page and makes change it is documented
+ * in a .docChanges() which procudes and array with all the changes
+ * 
+ * The .onSnapshot() method returns when a new snapshot is created when
+ * the database occurs
+ */
+
+ database.collection("alchemy").onSnapshot(snapshot => {
+    //snapshot updates whenever the database updates
+    snapshot.docChanges().forEach(change => {
+        const data = change.doc;
+        if(change.type === "added")
+            addrecipe(data.data(), data.id);
+        else if(change.type === "removed")
+            deleteRecipy(data.id);
+    });
+ });
 
 const addrecipe = (doc, id) => {
     // console.log(doc.Result) -> prints the result of each subcollection
@@ -42,6 +63,20 @@ const addrecipe = (doc, id) => {
             <button class = "btn btn-danger btn-sm my-2">delete</button>
         </li>
     `;
+};
+
+const deleteRecipy = (id) => {
+
+    const recipes = document.querySelectorAll('li')
+
+    recipes.forEach(recipe => {
+        if(recipe.getAttribute("data-id") === id)
+            recipe.remove();
+    });
+
+    // database.collection("alchemy").doc(id).delete()
+    //     .then(() => console.log("Sucessfully deleted"))
+    //     .catch(err => console.log(err))
 };
 
 /**
@@ -63,10 +98,10 @@ input.addEventListener("submit", e => {
         .catch(err => console.log(err));
 });
 
-/**
- * To delete from the database:
- *      .delete(*id*)
- */
+// /**
+//  * To delete from the database:
+//  *      .delete(*id*)
+//  */
 
 list.addEventListener('click', e => {
     //console.log(e.target.tagName)
