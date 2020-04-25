@@ -1,5 +1,6 @@
-const list  = document.querySelector('ul')
-const input = document.querySelector("form")
+const list  = document.querySelector('ul');
+const input = document.querySelector("form");
+const unbut = document.querySelector("button");
 
 /**
  * In the html document database was initialized to the firestore
@@ -40,7 +41,7 @@ const input = document.querySelector("form")
  * the database occurs
  */
 
- database.collection("alchemy").onSnapshot(snapshot => {
+ const unsub = database.collection("alchemy").onSnapshot(snapshot => {
     //snapshot updates whenever the database updates
     snapshot.docChanges().forEach(change => {
         const data = change.doc;
@@ -113,3 +114,12 @@ list.addEventListener('click', e => {
             .catch(err => console.log(err));
     }
 })
+
+/**
+ * Stop real time updates when unsub button is clicked
+ */
+
+ unbut.addEventListener('click', () => {
+    unsub();
+    console.log("unsubbed from changes")
+ })
