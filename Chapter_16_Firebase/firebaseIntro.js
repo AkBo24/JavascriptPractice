@@ -1,5 +1,5 @@
-const list = document.querySelector('ul')
-
+const list  = document.querySelector('ul')
+const input = document.querySelector("form")
 
 /**
  * In the html document database was initialized to the firestore
@@ -42,3 +42,22 @@ const addrecipe = (doc) => {
         </li>
     `;
 };
+
+/**
+ * To add to the database theh collections api has a .add() function
+ * which takes a JS object formatted to the collection and creates a new
+ * document as needed
+ */
+
+input.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const recipe = {
+        Result: input.recipe.value,
+        createdAt: firebase.firestore.Timestamp.fromDate(new Date)
+    }
+
+    database.collection('alchemy').add(recipe)
+        .then(() => console.log("added successfully"))
+        .catch(err => console.log(err));
+});
