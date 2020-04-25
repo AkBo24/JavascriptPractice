@@ -1,27 +1,36 @@
-const key = 'tgpWEDj9bv9y4YvtDR7b77OGRbUZMqqL';
+class Forecast {
+  constructor() {
+    this.key = 'tgpWEDj9bv9y4YvtDR7b77OGRbUZMqqL'
+    this.weatherURL ='http://dataservice.accuweather.com/currentconditions/v1/';
+    this.cityURL = 'http://dataservice.accuweather.com/locations/v1/cities/search';
+  }
 
-// get weather information
-const getCityWeather = async (id) => {
   
-    const base = 'http://dataservice.accuweather.com/currentconditions/v1/';
-    const query = `${id}?apikey=${key}`;
-  
-    const response = await fetch(base + query);
+  // get weather information
+  async getCityWeather (id) {
+    const query = `${id}?apikey=${this.key}`;
+    const response = await fetch(this.weatherURL + query);
     const data = await response.json();
-  
+
     return data[0];
-  
+
   };
 
-// get city information
-const getCityData = async (city) => {
+  // get city information
+  async getCityData (city) {
+    const query = `${this.cityURL}?apikey=${this.key}&q=${city}`;
 
-  const url = 'http://dataservice.accuweather.com/locations/v1/cities/search';
-  const query = `${url}?apikey=${key}&q=${city}`;
+    const response = await fetch(query);
+    const data = await response.json();
 
-  const response = await fetch(query);
-  const data = await response.json();
+    return data[0];
+  }
 
-  return data[0];
+  async updateCity(city) {
+    const getCity     = await this.getCityData(city);
+    const getWeather  = await this.getCityWeather(getCity.Key);
+    return {getCity, getWeather}
+  }
 
-};
+}
+

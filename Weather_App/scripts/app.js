@@ -3,6 +3,7 @@ const details  = document.querySelector(".details");
 const card     = document.querySelector(".card");
 const time     = document.querySelector("img.time");
 const icon     = document.querySelector(".icon img");
+const forecast = new Forecast();
 
 input.addEventListener('submit', e => {
     //prevent reload
@@ -13,10 +14,10 @@ input.addEventListener('submit', e => {
     input.reset();
 
     //update the city information
-    updateData(city)
+    forecast.updateCity(city)
         .then(data => updateUI(data))
         .catch(err => console.log(err));
-    console.log("dd")
+
     localStorage.setItem("city", city);
 });
 
@@ -32,6 +33,8 @@ const updateData = async (city) => {
 }
 
 const updateUI = (data) => {
+    // const getCity = data.cityDets;
+    // const getWeather = data.weather;
     const {getCity, getWeather} = data;
 
     details.innerHTML = `
@@ -42,8 +45,8 @@ const updateUI = (data) => {
             <span>&deg;C</span>
         </div>    
     `;
-        //update icon & image
-
+    
+    //update icon & image
     let timeImg = "img/";
     if(getWeather.IsDayTime)
         timeImg = timeImg + 'day.svg';
@@ -59,8 +62,8 @@ const updateUI = (data) => {
 
 //If local data exists (ie: the user has previously searched a city) then
 //automatically show it
-if(localStorage.getItem("city") != null){
-    updateData(localStorage.getItem("city"))
+if(localStorage.getItem("city")){
+    forecast.updateCity(localStorage.getItem('city'))
         .then(data => updateUI(data))
         .catch(err => console.log(err))
 }
