@@ -32,9 +32,12 @@
 		},
 		{
 			"path": "Chapter_15_OOP"
+		},
+		{
+			"path": "Chapter_16_Firebase"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Weather_App"
+		"liveServer.settings.multiRootWorkspaceName": "Chapter_16_Firebase"
 	}
 }
