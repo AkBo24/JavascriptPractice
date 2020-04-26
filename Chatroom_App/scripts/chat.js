@@ -4,6 +4,7 @@ class Chatroom {
         this.room = room;
         this.username = username;
         this.chats = database.collection('Chatroom');
+        this.unsub;
     }
 
     /**
@@ -32,7 +33,7 @@ class Chatroom {
      * @param {Callback Function} updateUi 
      */
     async getChats (updateUi) {
-        this.chats
+        this.unsub = this.chats
             .where('room', '==', this.room)
             .orderBy('createdat')
             .onSnapshot(snapshot => {
@@ -41,6 +42,16 @@ class Chatroom {
                         return updateUi(change.doc.data());
                 });
             });
+    }
+
+    setUserName(username) {
+        this.username = username;
+    }
+
+    setRoom(username) {
+        this.room = room;
+        if(this.unsub)
+            this.unsub();
     }
 }
 
