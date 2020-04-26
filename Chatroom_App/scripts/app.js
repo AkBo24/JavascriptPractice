@@ -1,17 +1,17 @@
-const chats    = document.querySelector(".chat-list");
-const userMssg = document.querySelector(".new-chat");
+const chats      = document.querySelector(".chat-list");
+const userMssg   = document.querySelector(".new-chat");
 const updateName = document.querySelector(".new-name");
+const changeRoom = document.querySelector(".chat-rooms");
 
-console.log(updateName.name)
+console.log(changeRoom)
+
+let currName = localStorage.getItem('username');
+
+if(currName == null)
+    currName = 'anon';
 
 const chatUI = new ChatUI(chats);
-let chatroom = null;
-
-if(localStorage.getItem('username') == null)
-    chatroom = new Chatroom('#gamers','anon');
-else   
-    chatroom = new Chatroom('#gamers', localStorage.getItem('username'));
-
+const chatroom = new Chatroom('#gamers', currName);
 
 chatroom.getChats(data => chatUI.render(data));
 
@@ -31,4 +31,11 @@ updateName.addEventListener("submit", e => {
     console.log(`new name: ${newName}`)
     localStorage.setItem('username', newName);
 
+});
+
+changeRoom.addEventListener("click", e=> {
+    if(e.target.tagName === "BUTTON") chatUI.clearList();
+    const newRoom = e.target.getAttribute('id');
+    chatroom.setRoom(newRoom);
+    chatroom.getChats(chat => chatUI.render(chat));
 });

@@ -48,7 +48,7 @@ class Chatroom {
         this.username = username;
     }
 
-    setRoom(username) {
+    setRoom(room) {
         this.room = room;
         if(this.unsub)
             this.unsub();
