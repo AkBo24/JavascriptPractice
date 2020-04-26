@@ -32,13 +32,15 @@ class Chatroom {
      * @param {Callback Function} updateUi 
      */
     async getChats (updateUi) {
-        this.chats.onSnapshot(snapshot => {
-            snapshot.docChanges().forEach(change => {
-                if(change.type === 'added')
-                    return updateUi(change.doc.data());
+        this.chats
+            .where('room', '==', this.room)
+            .orderBy('createdat')
+            .onSnapshot(snapshot => {
+                snapshot.docChanges().forEach(change => {
+                    if(change.type === 'added')
+                        return updateUi(change.doc.data());
+                });
             });
-
-        });
     }
 }
 
