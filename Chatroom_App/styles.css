@@ -22,3 +22,13 @@ h1, .my-2{
     font-weight: bold;
     color: #0476D9;
 }
+
+.username {
+    font-weight: bolder;
+    color: #0476D9;
+}
+
+.time {
+    font-weight: lighter;
+
+}
