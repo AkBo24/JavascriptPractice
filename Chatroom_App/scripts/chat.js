@@ -54,9 +54,3 @@ class Chatroom {
             this.unsub();
     }
 }
-
-const chatroom = new Chatroom("#gamers", "#me");
-// chatroom.addChat("First chat message");
-chatroom.getChats((data) => 
-    {console.log(data)
-});
