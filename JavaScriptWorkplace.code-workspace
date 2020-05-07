@@ -38,9 +38,12 @@
 		},
 		{
 			"path": "Chatroom_App"
+		},
+		{
+			"path": "Chpater_18_ES6"
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "Chatroom_App"
+		"liveServer.settings.multiRootWorkspaceName": "Chpater_18_ES6"
 	}
 }
