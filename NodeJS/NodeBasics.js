@@ -10,6 +10,9 @@
 * To import things into a file use: require('FILE_PATH');
 */
 
-const count = require('./basics'); //the ./ goes to the current directory
+const stuff = require('./exports'); //the ./ goes to the current directory
 
-count([1,2,3,4]);
+const array = [0,1,2,3,4,5];
+
+console.log(stuff.add(array));
+console.log(stuff.count(array));
