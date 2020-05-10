@@ -8,6 +8,9 @@
 *
 * To export things use: module.exports = variable name, class name etc
 * To import things into a file use: require('FILE_PATH');
+*   Require returns an object given by the directory/module name, then the
+*   variable becomes a reference from which we can use methods, vars etc if they
+*   are exported
 */
 
 const stuff = require('./exports'); //the ./ goes to the current directory
