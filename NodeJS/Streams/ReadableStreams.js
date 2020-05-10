@@ -15,6 +15,8 @@
 *
 *  If param #2 of createReadStream() is not included, it will return packet
 *  objects inherited from buffer, and not a readable text
+*
+*  The on function of the stream is called whenever a new packet is sent 
 */
 
 const fs = require('fs');
