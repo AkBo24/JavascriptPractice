@@ -6,7 +6,7 @@
 const http = require('http');
 const fs = require('fs');
 
-const read = fs.createReadStream('readme.txt');
+const read = fs.createReadStream('readme.txt', 'utf8');
 
 const server = http.createServer((req, res) => {
   res.writeHead(200, {'Content-Type' : 'text/plain'});
