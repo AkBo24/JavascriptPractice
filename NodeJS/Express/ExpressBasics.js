@@ -27,5 +27,22 @@ app.get('/contact-us', (req, res) => {
   res.send(JSON.stringify(contact));
 });
 
+
+/*
+*
+* Route params: the req object provided by servers has a params field that
+* we can use to access certain parts of a get request
+*
+* For instance if a user puts in a profile name into the url we can access that
+* w/ req.params.name
+*
+* In the routing url we can use wild cards to provide a "blanket route"
+*
+*/
+
+app.get('/profile/:id', (req, res) => { //the ":" indicates a variable
+  res.send(`You accessed the id: ${req.params.id}`);
+});
+
 app.listen(3000);
 console.log('Listening to port 3000');
