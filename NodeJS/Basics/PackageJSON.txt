@@ -1,0 +1,24 @@
+Npm (Node Package Manager) allows node to uninstall and install packages for
+projects.
+
+To install a package: npm install *pkg name*
+   Global installation - npm install -g *pkg name*
+
+To uninstall a package: npm uninstall *pkg name*
+   Global unninstallation - npm uninstall -g *pkg name*
+
+Npm can track what external packages a program requires with a Package.json
+file
+
+  to construct: npm init
+  to save a dependency: npm install --save *pkg name*
+
+To install the pkgs required by the program: npm install
+
+To delete dependencies delete it from the Package.json or
+    npm uninstall --save *pkg name*
+
+The --save flag tells npm to update the Package.json file
+
+To link a global node package to the current project:
+  npm link *pkg name* (inside the project directory)
