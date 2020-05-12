@@ -22,4 +22,10 @@ app.get('/', (req, res) => {
   res.send('Writing using express and now nodemon');
 });
 
+app.get('/contact-us', (req, res) => {
+  const contact = {name1: 'Akshay Bodla'};
+  res.send(JSON.stringify(contact));
+});
+
 app.listen(3000);
+console.log('Listening to port 3000');
