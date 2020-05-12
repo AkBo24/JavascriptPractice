@@ -19,3 +19,6 @@ To delete dependencies delete it from the Package.json or
     npm uninstall --save *pkg name*
 
 The --save flag tells npm to update the Package.json file
+
+To link a global node package to the current project:
+  npm link *pkg name* (inside the project directory)
