@@ -23,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/profiles/:id', (req, res) => {
-  res.render(`${__dirname}\\profiles.ejs`, {profile: req.params.id});
+  res.render(`${__dirname}\\profiles.ejs`, {profile: req.params.id, id: 233});
 });
 
 app.listen(3000, '127.0.0.1');
