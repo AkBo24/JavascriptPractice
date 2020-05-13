@@ -13,6 +13,11 @@
 *
 *  These methods correlate to the data sent by a client to the server (for \
 *  instance .get() represents the routing url entered by the browser)
+*
+*  To send data to the browsser: send(*data*)
+*
+*  To read from a an external file (eg an HTML file): sendFile(*dir name*)
+*
 */
 
 const express = require('express');
