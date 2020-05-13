@@ -11,6 +11,10 @@
 * To render them with express: app.render(*file name*, *any params*)
 *   The params are an object as such: {objName: variable}, inside the ejs we
 *   acess the variable w/objName
+*
+* Inside the HTML use <%= *objName* %> to access the data sent by this code
+*
+* To print code in the ejs: <%> *js code </%>*
 */
 
 const express = require('express');
@@ -23,7 +27,9 @@ app.get('/', (req, res) => {
 });
 
 app.get('/profiles/:id', (req, res) => {
-  res.render(`${__dirname}\\profiles.ejs`, {profile: req.params.id, id: 233});
+  words = ['pokemon', 'hello','meow']
+  res.render(`${__dirname}\\profiles.ejs`, {profile: req.params.id, id: 233,
+    words: words});
 });
 
 app.listen(3000, '127.0.0.1');
