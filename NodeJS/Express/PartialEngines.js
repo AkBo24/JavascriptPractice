@@ -9,6 +9,8 @@ const http    = require('http');
 const express = require('express');
 const app     = express();
 
+app.use('/css', express.static('css'));
+
 app.get('/', (req, res) => {
   res.render('website.ejs');
 });
