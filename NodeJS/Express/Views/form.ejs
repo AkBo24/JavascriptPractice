@@ -8,7 +8,7 @@
 <body>
   <%- include('Partials/navigation.html'); %>
   <h1>Here's a form!</h1>
-  <form id="contact-form">
+  <form id="contact-form" method="POST" action = '/form'>
     <label for="who">Who do you want to contact?</label>
     <input type="text" name="who" value = "<%= query.who %>">
 
