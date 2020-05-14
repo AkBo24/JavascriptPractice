@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<head>
+
+  <link rel="stylesheet" href="/css/master.css">
+</head>
+
+<body>
+
+  <h1>Profile home page</h1>
+  <p>You are accessing <%= profile %>'s profile</p>
+  <p>Dummy data: <%= id %></p>
+  <h2>Random Words:</h2>
+
+  <ul>
+    <% words.forEach(word => { %>
+        <li> <%= word %> </li>
+    <% }); %>
+  </u>
+
+</body>
+
+</html>

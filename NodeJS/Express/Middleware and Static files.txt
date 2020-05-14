@@ -1,0 +1,31 @@
+GOTO: PartialEngines.js for an example of static css file
+
+Middleware: the code that a server runs between recieving a request and
+            sending a result
+
+When you evoke the get() method provided by express the callback function param
+is an example of Middleware (it runs normal JS code and can output back to the
+user)
+
+Static files: code that runs the same on every webpage (ex: all the engines use
+the css inside /css/master.css)
+
+We can access static code as such: app.use(*routing directory*, callback function);
+
+  Param 1) Everytime this route is called the callback function is called
+  Param 2) the callback function is structured as such:
+
+           use(*routing directory*, (req, res, next) => {
+              //some code
+              next();
+           });
+           Req and Res function as normally
+
+           next, when called, evokes the next middleware in line (for instance
+           if there is another get method with a more specific routing code)
+
+Express provides public, static methods that allow the callback function to
+access files.
+  express.static(*directory*);
+      In PartialEngines.js the file is the css, the engines request master.css
+      and receives it through the use middleware
